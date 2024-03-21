@@ -14,3 +14,16 @@ exercises.c:51:8: error: implicit declaration of function ‘push_back’; did y
 cc1: all warnings being treated as errors
 Compilation failed
 2c07196
+Thu 21 Mar 2024 02:11:42 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:51:10: error: called object ‘elemento’ is not a function or function pointer
+   51 |          elemento(L, elemento);
+      |          ^~~~~~~~
+exercises.c:49:13: note: declared here
+   49 |        int* elemento = (int*)malloc(sizeof(int));
+      |             ^~~~~~~~
+Compilation failed
+f41f3e2
