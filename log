@@ -97,3 +97,53 @@ exercises.c:161:1: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 2244cda
+Fri 22 Mar 2024 06:06:03 PM UTC: 
+ exercises.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:135:29: error: expected expression before ‘||’ token
+  135 |       if (cadena[i] == '(') || (cadena[i] == '[') || (cadena[i] == '{'))
+      |                             ^~
+exercises.c:135:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  135 |       if (cadena[i] == '(') || (cadena[i] == '[') || (cadena[i] == '{'))
+      |       ^~
+exercises.c:135:72: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  135 |       if (cadena[i] == '(') || (cadena[i] == '[') || (cadena[i] == '{'))
+      |                                                                        ^
+exercises.c:135:72: error: expected statement before ‘)’ token
+exercises.c:139:7: error: ‘else’ without a previous ‘if’
+  139 |       else
+      |       ^~~~
+exercises.c:141:31: error: expected expression before ‘||’ token
+  141 |         if (cadena[i] == ')') || (cadena[i] == ']') || (cadena[i] == '}'))
+      |                               ^~
+exercises.c:141:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  141 |         if (cadena[i] == ')') || (cadena[i] == ']') || (cadena[i] == '}'))
+      |         ^~
+exercises.c:141:74: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  141 |         if (cadena[i] == ')') || (cadena[i] == ']') || (cadena[i] == '}'))
+      |                                                                          ^
+exercises.c:141:74: error: expected statement before ‘)’ token
+exercises.c:149:18: error: comparison between pointer and integer [-Werror]
+  149 |         if (dato == '(' && cadena[i] == ')') || (dato == '[' && cadena[i] == ']') || (dato == '{' && cadena[i] == '}'))
+      |                  ^~
+exercises.c:149:46: error: expected expression before ‘||’ token
+  149 |         if (dato == '(' && cadena[i] == ')') || (dato == '[' && cadena[i] == ']') || (dato == '{' && cadena[i] == '}'))
+      |                                              ^~
+exercises.c:149:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  149 |         if (dato == '(' && cadena[i] == ')') || (dato == '[' && cadena[i] == ']') || (dato == '{' && cadena[i] == '}'))
+      |         ^~
+exercises.c:149:119: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  149 |         if (dato == '(' && cadena[i] == ')') || (dato == '[' && cadena[i] == ']') || (dato == '{' && cadena[i] == '}'))
+      |                                                                                                                       ^
+exercises.c:149:119: error: expected statement before ‘)’ token
+exercises.c:153:9: error: ‘else’ without a previous ‘if’
+  153 |         else
+      |         ^~~~
+exercises.c:159:1: error: control reaches end of non-void function [-Werror=return-type]
+  159 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+0b271b5
