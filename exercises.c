@@ -142,13 +142,6 @@ int parentesisBalanceados(char *cadena) {
                 return 0;
             }
         }
-    }
-
-    // Si la pila está vacía al final, significa que todos los paréntesis están balanceados
-    if (is_empty(pila)) {
-        return 1;
-    } else {
-        return 0;
-    }
+    }  
 }
 

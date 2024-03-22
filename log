@@ -464,3 +464,54 @@ exercises.c:140:32: error: initialization of ‘char’ from ‘void *’ makes 
 cc1: all warnings being treated as errors
 Compilation failed
 144efed
+Fri 22 Mar 2024 07:14:15 PM UTC: 
+ exercises.c | 7 -------
+ 1 file changed, 7 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:135:18: error: passing argument 1 of ‘push’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  135 |             push(&pila, cadena[i]);
+      |                  ^~~~~
+      |                  |
+      |                  Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:135:31: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  135 |             push(&pila, cadena[i]);
+      |                         ~~~~~~^~~
+      |                               |
+      |                               char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:137:17: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  137 |             if (is_empty(pila)) {
+      |                 ^~~~~~~~
+exercises.c:140:36: error: passing argument 1 of ‘pop’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  140 |             char top_element = pop(&pila);
+      |                                    ^~~~~
+      |                                    |
+      |                                    Stack ** {aka List **}
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:17:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Stack **’ {aka ‘List **’}
+   17 | void *pop(Stack *stack) { return popFront(stack); }
+      |           ~~~~~~~^~~~~
+In file included from test.c:5:
+exercises.c:140:32: error: initialization of ‘char’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  140 |             char top_element = pop(&pila);
+      |                                ^~~
+In file included from test.c:5:
+exercises.c:146:1: error: control reaches end of non-void function [-Werror=return-type]
+  146 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d64a8ad
