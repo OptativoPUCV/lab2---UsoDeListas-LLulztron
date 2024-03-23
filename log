@@ -526,3 +526,17 @@ exercises.c:158:1: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 92195c3
+Sat 23 Mar 2024 12:18:27 PM UTC: 
+ exercises.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:158:7: error: variable ‘balanceado’ set but not used [-Werror=unused-but-set-variable]
+  158 |   int balanceado;
+      |       ^~~~~~~~~~
+exercises.c:167:1: error: control reaches end of non-void function [-Werror=return-type]
+  167 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+7c45568
