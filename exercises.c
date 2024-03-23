@@ -126,43 +126,35 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-int parentesisBalanceados(char *cadena)
-{
-  int size = strlen(cadena);
-  Stack* pila = create_stack();
-
-  for (int i = 0; i < size; i++)
-    {
-      if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[')
-      {
-        push(pila, &cadena[i]);
+int parentesisBalanceados(char *cadena) {
+  int tamanio = strlen(cadena);
+  Stack *stack = create_stack();
+  for (int i = 0; i < tamanio ; i++) {
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+          push(stack, &cadena[i]);
+      } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+          if (top(stack) == NULL) {
+              return 0; 
+          }
+          char *top_c = (char *)top(stack);
+          if ((cadena[i] == ')' && *top_c == '(') ||
+              (cadena[i] == ']' && *top_c == '[') ||
+              (cadena[i] == '}' && *top_c == '{')) {
+              pop(stack);
+          } else {
+              return 0; 
+          }
       }
-      else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']')
-      {
-        if (top(pila) == NULL)
-        {
-          return 0;
-        }
-      char *tope = (char*)top(pila);
-      if ((cadena[i] == ')' && *tope == '(') || (cadena[i] == '}' && *tope == '{') ||                  (cadena[i] == ']' && *tope == '['))
-        {
-          pop(pila);
-        }
-        else 
-        {
-          return 0;
-        }
-      } 
-    } 
-  
-  int balanceado;
-  if (top(pila) == NULL)
-  {
-    balanceado = 1;
   }
-  else 
-  {
-    balanceado = 0;
-  }
+  /* //OPCION CONDICIONAL
+  int balanceados;
+  if (top(stack) == NULL) {
+    balanceados = 1; // Si la pila está vacía, los paréntesis están balanceados
+} else {
+    balanceados = 0; // Si la pila no está vacía, los paréntesis no están balanceados
+}*/
+  //SINTAXYS MAS CORTA
+  int balance = (top(stack) == NULL) ? 1 : 0;
+  return balance;
 }
 
