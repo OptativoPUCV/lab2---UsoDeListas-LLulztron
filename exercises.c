@@ -160,5 +160,5 @@ int parentesisBalanceados(char *cadena)
 } else {
     balanceados = 0; // Si la pila no está vacía, los paréntesis no están balanceados
 }
-
+  return balanceados;
 
