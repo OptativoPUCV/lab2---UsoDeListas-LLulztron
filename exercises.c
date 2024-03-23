@@ -155,7 +155,6 @@ int parentesisBalanceados(char *cadena)
           }
       }
   }
-  /* //OPCION CONDICIONAL
   int balanceados;
   if (top(stack) == NULL) 
   {
