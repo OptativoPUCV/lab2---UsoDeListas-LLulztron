@@ -155,6 +155,14 @@ int parentesisBalanceados(char *cadena)
           }
       }
   }
-  int balance = (top(stack) == NULL) ? 1 : 0;
-  return balance;
+  int balanceados;
+  if (top(stack) == NULL) 
+  {
+    balanceados = 1;
+  } 
+  else 
+  {
+    balanceados = 0;
+  }
+  return balanceados;
 }
